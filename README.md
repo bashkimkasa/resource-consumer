@@ -8,11 +8,11 @@ Resource Consumer can help with autoscaling tests for:
 - horizontal autoscaling of pod - changing the size of replication controller,
 - vertical autoscaling of pod - changing its resource limits.
 
-This code closely references the following google resource:  
+This code references the following google resource:  
 https://gitlab.cncf.ci/kubernetes/kubernetes/tree/9d0cbb7503b7070817b3ec08e76f3f3addf3675b/test/images/resource-consumer
 
 ## Usage
-Resource Consumer starts an HTTP server and handles sent requests.
+Resource Consumer starts an HTTP server and handles requests.
 It listens on port given as a flag (default 8080).
 Action of consuming resources is send to the container by a GET http request.
 
@@ -66,15 +66,15 @@ Docker image of Resource Consumer can be found in DockerHub Container Registry a
 
 ## Use cases
 
-### Cluster size autoscaling
+### Cluster autoscaling
 1. Consume more resources on each node that is specified for autoscaler
 2. Observe that cluster size increased
 
-### Horizontal autoscaling of pod
+### Horizontal pod autoscaling (HPA)
 1. Create consuming RC and start consuming appropriate amount of resources
 2. Observe that RC has been resized
 3. Observe that usage on each replica decreased
 
-### Vertical autoscaling of pod
+### Vertical pod autoscaling (VPA)
 1. Create consuming pod and start consuming appropriate amount of resources
 2. Observed that limits has been increased
